@@ -157,9 +157,29 @@ p {
 /* ── HERO ── */
 #hero {
   display: flex;
-  gap: 40px;
   align-items: center;
-  margin-bottom: 40px;
+  gap: 24px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  background: var(--bg2);
+
+}
+
+#vcard-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vcard-line {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.vcard-line a {
+  color: var(--cyan);
 }
 
 #photo {
@@ -445,7 +465,7 @@ p {
   }
 
   #hero {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: flex-start;
   }
 
