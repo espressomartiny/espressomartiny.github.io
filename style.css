@@ -393,6 +393,21 @@ p {
   text-decoration: none;
 }
 
+.share-btn {
+  display: inline-block;
+  padding: 8px 18px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  margin-left: 8px;
+}
+.share-btn:hover { background: var(--bg4); color: var(--text); }
+
 /* ── SCROLLBAR ── */
 ::-webkit-scrollbar {
   width: 8px;
