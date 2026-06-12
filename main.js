@@ -112,3 +112,55 @@ document.getElementById("statusbar").innerHTML = `
   <span>UTF-8</span>
   <span style="margin-left:auto">{ } HTML &nbsp;  Spaces: 2 &nbsp;  🌈 Rainbow</span>
 `;
+
+// ── MOBILE HOME OVERLAY ──────────────────────────────────────
+const overlay = document.createElement("div");
+overlay.id = "mobile-overlay";
+overlay.innerHTML = `
+  <div id="mobile-overlay-content">
+    <button id="overlay-close">✕</button>
+    <div id="overlay-nav">
+      ${pages
+        .map(
+          (p) => `
+        <a href="${p.href}" class="overlay-nav-item ${p.id === currentPage ? "active" : ""}">
+          <span style="color:${p.color}">◉</span> ${p.label}
+        </a>
+      `,
+        )
+        .join("")}
+    </div>
+    <div class="overlay-divider"></div>
+    <div id="overlay-links">
+      ${links
+        .map(
+          (l) => `
+        <a href="${l.href}" class="overlay-link" title="${l.label}" aria-label="${l.label}"
+           target="${l.href.startsWith("mailto") ? "_self" : "_blank"}" rel="noopener">
+          ${l.icon} <span>${l.label}</span>
+        </a>
+      `,
+        )
+        .join("")}
+    </div>
+    <div class="overlay-readme">${readme}</div>
+  </div>
+`;
+document.body.appendChild(overlay);
+
+const mobileTab = document.createElement("a");
+mobileTab.id = "mobile-home-tab";
+mobileTab.textContent = "☰";
+mobileTab.href = "#";
+mobileTab.className = "tab";
+mobileTab.addEventListener("click", (e) => {
+  e.preventDefault();
+  overlay.classList.add("open");
+});
+document
+  .getElementById("overlay-close")
+  .addEventListener("click", () => overlay.classList.remove("open"));
+overlay.addEventListener("click", (e) => {
+  if (e.target === overlay) overlay.classList.remove("open");
+});
+document.getElementById("tabs").prepend(mobileTab);
