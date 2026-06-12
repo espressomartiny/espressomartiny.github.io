@@ -407,7 +407,11 @@ p {
   transition: background 0.15s, color 0.15s;
   margin-left: 8px;
 }
-.share-btn:hover { background: var(--bg4); color: var(--text); }
+
+.share-btn:hover {
+  background: var(--bg4);
+  color: var(--text);
+}
 
 /* ── SCROLLBAR ── */
 ::-webkit-scrollbar {
@@ -451,5 +455,11 @@ p {
 
   .exp-poster {
     width: 100%;
+  }
+
+  .share-btn {
+    display: block;
+    margin-top: 10px;
+    margin-left: 0;
   }
 }
