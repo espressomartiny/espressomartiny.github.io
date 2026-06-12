@@ -50,9 +50,7 @@ const links = [
 const readme = `Hi, this is my personal academic website,
 welcome!
 
-I'm a linguist currently
-finishing my PhD. 
-That's why this site is primarily focused on recruiting experiment participants for now -- please see the section <a href="participate.html" style="color:var(--green)">participate</a>.`;
+These days, this site serves mainly as a recruitment platform for research participants -- please see the section <a href="participate.html" style="color:var(--green)">participate</a> for more details.`;
 
 // ── SIDEBAR ──────────────────────────────────────────────────
 document.getElementById("sidebar").innerHTML = links
